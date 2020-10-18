@@ -1,0 +1,109 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 8d75a0e73693b5ab5d5fb9c006db0a12af37bee8dff3a5f72f4d8ddb6ce02018
+
+name:           kernighan-toy
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/nobsun/kernighan-toy#readme>
+homepage:       https://github.com/nobsun/kernighan-toy#readme
+bug-reports:    https://github.com/nobsun/kernighan-toy/issues
+author:         Nobuo Yamashita
+maintainer:     nobsun@sampou.org
+copyright:      Copyright: (c) 2020 Nobuo Yamashita
+license:        BSD3
+license-file:   LICENSE
+build-type:     Custom
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/nobsun/kernighan-toy
+
+library
+  exposed-modules:
+      Lib
+      Prompt
+      ToyMachine
+  other-modules:
+      Paths_kernighan_toy
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , doctest
+    , hpack
+    , hspec
+    , main-tester
+    , markdown-unlit
+    , unicode-show
+    , utf8-string
+  default-language: Haskell2010
+
+executable kernighan-toy
+  main-is: Main.hs
+  other-modules:
+      Paths_kernighan_toy
+  hs-source-dirs:
+      app
+  ghc-options: -rtsopts
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , doctest
+    , hpack
+    , hspec
+    , kernighan-toy
+    , main-tester
+    , markdown-unlit
+    , unicode-show
+    , utf8-string
+  default-language: Haskell2010
+
+test-suite kernighan-toy-doctest
+  type: exitcode-stdio-1.0
+  main-is: doctests.hs
+  other-modules:
+      LibSpec
+      Paths_kernighan_toy
+  hs-source-dirs:
+      test
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , doctest
+    , hpack
+    , hspec
+    , kernighan-toy
+    , main-tester
+    , markdown-unlit
+    , unicode-show
+    , utf8-string
+  default-language: Haskell2010
+
+test-suite kernighan-toy-test
+  type: exitcode-stdio-1.0
+  main-is: spec.hs
+  other-modules:
+      LibSpec
+      Paths_kernighan_toy
+  hs-source-dirs:
+      test
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , doctest
+    , hpack
+    , hspec
+    , kernighan-toy
+    , main-tester
+    , markdown-unlit
+    , unicode-show
+    , utf8-string
+  default-language: Haskell2010

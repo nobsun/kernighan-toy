@@ -1,0 +1,9 @@
+.stack-work/
+dist-newstyle/
+# kernighan-toy.cabal
+stack.yaml
+error.log
+core
+*.hi
+*.o
+*~

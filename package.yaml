@@ -1,0 +1,68 @@
+name:                kernighan-toy
+version:             0.1.0.0
+github:              "nobsun/kernighan-toy"
+license:             BSD3
+author:              "Nobuo Yamashita"
+maintainer:          "nobsun@sampou.org"
+copyright:           "Copyright: (c) 2020 Nobuo Yamashita"
+build-type:	     Custom
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Experiment
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/nobsun/kernighan-toy#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- unicode-show
+- markdown-unlit
+- doctest
+- bytestring
+- utf8-string
+- hspec
+- main-tester
+- hpack
+
+library:
+  source-dirs: src
+
+executables:
+  kernighan-toy:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -rtsopts
+    # - -threaded
+    # - -with-rtsopts=-N
+    dependencies:
+    - kernighan-toy
+
+tests:
+  kernighan-toy-test:
+    main:                spec.hs
+    source-dirs:         test
+    # ghc-options:
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N
+    dependencies:
+    - kernighan-toy
+    - hspec
+
+  kernighan-toy-doctest:
+    main:                doctests.hs
+    source-dirs:         test
+    # ghc-options:
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N
+    dependencies:
+    - kernighan-toy

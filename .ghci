@@ -1,0 +1,6 @@
+:set prompt ">>> "
+:set -pgmL markdown-unlit
+:set -interactive-print=Text.Show.Unicode.uprint
+:set +s
+:set +t
+:set -XLambdaCase -XBangPatterns -XScopedTypeVariables
