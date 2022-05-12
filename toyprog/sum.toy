@@ -1,0 +1,9 @@
+top get
+    ifzero bot
+    add sum
+    store sum
+    goto top
+bot load sum
+    print
+    stop
+sum 0

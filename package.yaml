@@ -30,15 +30,20 @@ dependencies:
 - hspec
 - main-tester
 - hpack
+- array
+- binary
 
 library:
   source-dirs: src
+  ghc-options:
+  - -pgmL markdown-unlit
 
 executables:
-  kernighan-toy:
+  toysim:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
+    - -pgmL markdown-unlit
     - -rtsopts
     # - -threaded
     # - -with-rtsopts=-N

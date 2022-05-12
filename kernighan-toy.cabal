@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 8d75a0e73693b5ab5d5fb9c006db0a12af37bee8dff3a5f72f4d8ddb6ce02018
+-- hash: de4ba3356d23a6fe99be5149dce1bf62b3aca511971abeed2810c0830bd87742
 
 name:           kernighan-toy
 version:        0.1.0.0
@@ -29,13 +29,16 @@ library
   exposed-modules:
       Lib
       Prompt
-      ToyMachine
+      Toysim
   other-modules:
       Paths_kernighan_toy
   hs-source-dirs:
       src
+  ghc-options: -pgmL markdown-unlit
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , binary
     , bytestring
     , doctest
     , hpack
@@ -46,15 +49,17 @@ library
     , utf8-string
   default-language: Haskell2010
 
-executable kernighan-toy
+executable toysim
   main-is: Main.hs
   other-modules:
       Paths_kernighan_toy
   hs-source-dirs:
       app
-  ghc-options: -rtsopts
+  ghc-options: -pgmL markdown-unlit -rtsopts
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , binary
     , bytestring
     , doctest
     , hpack
@@ -75,7 +80,9 @@ test-suite kernighan-toy-doctest
   hs-source-dirs:
       test
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , binary
     , bytestring
     , doctest
     , hpack
@@ -96,7 +103,9 @@ test-suite kernighan-toy-test
   hs-source-dirs:
       test
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , binary
     , bytestring
     , doctest
     , hpack

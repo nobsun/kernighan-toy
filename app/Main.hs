@@ -1,6 +1,7 @@
 module Main where
 
-import ToyMachine
+import Toysim
+import System.Environment ( getArgs )
 
 main :: IO ()
-main = interact (runToy sampleSource)
+main = getArgs >>= runToy . head
